@@ -179,6 +179,9 @@ extern struct portduino_config_struct {
     int hostMetrics_interval = 0;
     int hostMetrics_channel = 0;
 
+    // VirtualSensor
+    std::string virtualSensor_path = "";
+
     // config
     bool has_config_overrides = false;
     int configDisplayMode = 0;
@@ -520,6 +523,13 @@ extern struct portduino_config_struct {
             out << YAML::Key << "Channel" << YAML::Value << hostMetrics_channel;
 
             out << YAML::EndMap; // HostMetrics
+        }
+
+        // VirtualSensor
+        if (virtualSensor_path != "") {
+            out << YAML::Key << "VirtualSensor" << YAML::Value << YAML::BeginMap;
+            out << YAML::Key << "Path" << YAML::Value << virtualSensor_path;
+            out << YAML::EndMap; // VirtualSensor
         }
 
         // config

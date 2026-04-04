@@ -204,6 +204,10 @@ HostMetrics:
 #  UserStringCommand: cat /sys/firmware/devicetree/base/serial-number # Command to execute, to send the results as the userString
 
 
+VirtualSensor:
+#  Path: /tmp/meshtastic-env.yaml # YAML file with environment telemetry (temperature, relative_humidity, barometric_pressure, wind_speed, wind_direction)
+
+
 Config:
 #  DisplayMode: TWOCOLOR # uncomment to force BaseUI
 #  DisplayMode: COLOR # uncomment to force MUI

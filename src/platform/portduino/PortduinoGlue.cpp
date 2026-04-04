@@ -960,6 +960,10 @@ bool loadConfig(const char *configPath)
             portduino_config.hostMetrics_user_command = (yamlConfig["HostMetrics"]["UserStringCommand"]).as<std::string>("");
         }
 
+        if (yamlConfig["VirtualSensor"]) {
+            portduino_config.virtualSensor_path = (yamlConfig["VirtualSensor"]["Path"]).as<std::string>("");
+        }
+
         if (yamlConfig["Config"]) {
             portduino_config.has_config_overrides = true;
             if (yamlConfig["Config"]["DisplayMode"]) {
